@@ -2,9 +2,7 @@
 - name: create address
   hosts: all
   connection: local
-  
-  collections:
-      - paloaltonetworks.panos
+ 
       
   vars:
     device:
