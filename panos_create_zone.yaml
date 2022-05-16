@@ -20,4 +20,4 @@
       zone: "DMZ"
   - name: commit
     panos_commit_firewall:
-      provier: '{{device}}'
+      provider: '{{device}}'
