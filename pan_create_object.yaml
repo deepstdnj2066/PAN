@@ -1,0 +1,17 @@
+---
+- name: create  address
+  hosts: all
+  connection: local
+  vars:
+    device:
+      ip_address: "{{ ansible_host }}"
+      username: "admin"
+      password: "Networkjourney@123"
+  tasks:
+  - name: CREATE ADDRESS
+    panos_address_object:
+      provider: "{{ device }}"
+      name: 'deep_object'
+      address_type: 'ip-netmask'
+      value: '1.1.1.8'
+
