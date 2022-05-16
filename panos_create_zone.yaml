@@ -11,10 +11,11 @@
       username: "admin"
       password: "Networkjourney@123"
   tasks:
-  - name: create zone
+  - name: create zone1
     panos_zone:
       provider: '{{device}}'
       zone: "BCEND"
+  - name: create zone2  
     panos_zone:
       provider: '{{device}}'
       zone: "DMZ"
