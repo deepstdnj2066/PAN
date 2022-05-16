@@ -1,0 +1,34 @@
+---
+- name: create address
+  hosts: all
+  connection: local
+  
+  collections:
+      - paloaltonetworks.panos
+      
+  vars:
+    device:
+      ip_address: "{{ ansible_host }}"
+      username: "admin"
+      password: "Networkjourney@123"
+  tasks:
+  - name: CREATE ADDRESS
+    panos_address_object:
+      provider: '{{ device }}'
+      name: 'deep_object_3'
+      address_type: 'ip-netmask'
+      value: '1.1.1.10'
+  - name: CREATE ADDRESS
+    panos_address_object:
+      provider: '{{ device }}'
+      name: 'deep_object_4'
+      address_type: 'ip-netmask'
+      value: '1.1.1.11'
+  - name: create address-group
+    panos_address_group:
+      name: 'obgr_1'
+      provider: '{{device}}'
+      static_value: ['deep_object_3','deep_object_4']
+  - name: commit
+    panos_commit:
+      provider: '{{device}}'
