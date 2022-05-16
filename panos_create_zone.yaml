@@ -13,10 +13,10 @@
   tasks:
   - name: create zone
     panos_zone:
-      provider: {{'device'}}
+      provider: '{{device}}'
       zone: "BCEND"
     panos_zone:
-      provider: {{'device'}}
+      provider: '{{device}}'
       zone: "DMZ"
   - name: commit
     panos_commit_firewall:
