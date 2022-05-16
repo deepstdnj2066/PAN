@@ -20,5 +20,5 @@
       value: '1.1.1.8'
   - name: commit
     panos_commit_firewall:
-        provier: '{{device}}'
+        provider: '{{device}}'
 
