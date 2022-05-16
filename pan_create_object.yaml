@@ -2,6 +2,10 @@
 - name: create address
   hosts: all
   connection: local
+  
+  collections:
+      - paloaltonetworks.panos
+      
   vars:
     device:
       ip_address: "{{ ansible_host }}"
