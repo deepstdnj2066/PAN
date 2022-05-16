@@ -1,0 +1,23 @@
+- name: create address
+  hosts: all
+  connection: local
+  
+  collections:
+      - paloaltonetworks.panos
+      
+  vars:
+    device:
+      ip_address: "{{ ansible_host }}"
+      username: "admin"
+      password: "Networkjourney@123"
+  tasks:
+  - name: create zone
+    panos_zone:
+      provider: {{'device'}}
+      zone: "BCEND"
+    panos_zone:
+      provider: {{'device'}}
+      zone: "DMZ"
+  - name: commit
+    panos_commit_firewall:
+      provier: '{{device}}'
