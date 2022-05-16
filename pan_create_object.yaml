@@ -13,9 +13,9 @@
   - name: CREATE ADDRESS
     panos_address_object:
       provider: '{{ device }}'
-      name: 'deep_object'
+      name: 'deep_object_2'
       address_type: 'ip-netmask'
-      value: '1.1.1.8'
+      value: '1.1.1.9'
   - name: commit
     panos_commit_firewall:
         provider: '{{device}}'
