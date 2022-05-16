@@ -29,6 +29,3 @@
       name: 'obgr_1'
       provider: '{{device}}'
       static_value: ['deep_object_7','deep_object_3','deep_object_4']
-  - name: commit
-    panos_commit:
-      provider: '{{device}}'
